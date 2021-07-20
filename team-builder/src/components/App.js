@@ -2,6 +2,7 @@ import React, { useState} from 'react';
 import TeamMemberForm from './TeamMemberForm.js'
 import TeamMate from './TeamMate.js'
 import '../App.css';
+import initialTeam from '../data/initialTeam.js';
 
 const initialFormValues = {
   name: '',
@@ -10,7 +11,7 @@ const initialFormValues = {
 }
 
 function App() {
-  const [teamList, setTeamList] = useState([])
+  const [teamList, setTeamList] = useState(initialTeam)
   const [formValues, setFormValues] = useState(initialFormValues)
   
   const updateForm = (inputKey, inputValue) => {
@@ -25,7 +26,6 @@ function App() {
     if (!newTeamMember.name || !newTeamMember.email || !newTeamMember.role ) return
 
     setTeamList([newTeamMember, ...teamList])
-    console.log(teamList)
   }
 
   return (

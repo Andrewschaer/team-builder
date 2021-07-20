@@ -2,11 +2,9 @@ import React from 'react'
 
 export default function TeamMemberForm(props) {
     const { values, update, submit } = props
-    console.log('this is values:', values)
     const onChange = evt => {
         const { name, value } = evt.target
         update( name, value)
-        console.log('this is evt. target', evt.target)
     }
 
     const onSubmit = evt => {
